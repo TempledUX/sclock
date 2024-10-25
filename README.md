@@ -1,5 +1,7 @@
 # Clock
 
+[![PyPI version](https://img.shields.io/pypi/v/pyclock-benchmark?color=blue)](https://pypi.org/project/pyclock-benchmark/)
+
 Easy to use clock class, written in vanilla python. Allows to benchmark python code withing a function or with block. Contains multiple time banks for benchmarking different functions or with blocks independently.
 
 ## Examples
