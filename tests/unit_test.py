@@ -1,4 +1,4 @@
-from clock import Clock
+from sclock import Clock
 import pytest
 import time
 
