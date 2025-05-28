@@ -1,4 +1,4 @@
-from clock import Clock
+from sclock import Clock
 import pytest
 import time
 
@@ -6,6 +6,7 @@ import time
 @pytest.fixture
 def clock():
     return Clock()
+
 
 def test_decorator_usage(clock: Clock):
     @clock("test_label")
@@ -17,12 +18,14 @@ def test_decorator_usage(clock: Clock):
     assert len(times) == 1
     assert times[0] > 0
 
+
 def test_context_manager_usage(clock: Clock):
     with clock.using_label("context_label"):
         time.sleep(0.1)
     times = clock.get_times("context_label")
     assert len(times) == 1
     assert times[0] > 0
+
 
 def test_mean_time(clock: Clock):
     @clock("mean_test_label")
@@ -34,6 +37,7 @@ def test_mean_time(clock: Clock):
     mean_time = clock.mean_time("mean_test_label")
     assert mean_time > 0
     assert len(clock.get_times("mean_test_label")) == 2
+
 
 def test_mean_time_multiple_labels(clock: Clock):
     @clock("mean_test_label")
