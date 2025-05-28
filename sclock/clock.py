@@ -180,4 +180,4 @@ class Clock():
         if label is not None:
             self._time_bank.pop(label, None)  # Remove the label if it exists, otherwise do nothing.
         else:
-            self._time_bank.clear()  # Clear all entries from the defaultdict.
+            self._time_bank = defaultdict(list)  # Reset to a new defaultdict.
